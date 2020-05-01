@@ -1,0 +1,42 @@
+class Rectangle
+    {
+        public int A { get; set; }
+        public int B { get; set; }
+ 
+        public bool IsRectangle
+        {
+            get
+            { if (A != B)
+                    return true;
+                else return false;
+            }
+        }
+        public Rectangle (int a,int b){ A = a; B = b; }
+ 
+        public void PrintRectangle()
+        {
+            Console.WriteLine($"A={A}  B={B}");
+        }
+        public int GetS()
+        {
+            return A*B;
+        }
+        public int GetP()
+        {
+            return (A + B)*2;
+        }
+    }
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Rectangle rectangle = new Rectangle(4, 4);
+            rectangle.PrintRectangle();
+            if (!rectangle.IsRectangle)
+                Console.WriteLine("Квадрат!");
+            Rectangle rectangle1 = new Rectangle(4, 5);
+            rectangle1.PrintRectangle();
+            Console.WriteLine($"P={rectangle1.GetP()}  S={rectangle1.GetS()}");
+            Console.ReadKey();
+        }
+    }
